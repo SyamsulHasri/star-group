@@ -108,10 +108,11 @@ The system includes predefined test users for each user type. All users have the
 | `admin@example.com` | Admin | Admin | System administrator |
 
 
+------------------------------------------------------------------------------------------------
 
-Author
-Developed by Syamsul Hasri
-PHP / Laravel Developer
-■ syamsulhasri6@gmail.com
-■ https://github.com/SyamsulHasri
+Author <br>
+Developed by Syamsul Hasri <br>
+PHP / Laravel Developer <br>
+■ syamsulhasri6@gmail.com <br>
+■ https://github.com/SyamsulHasri <br>
 
