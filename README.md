@@ -22,15 +22,20 @@ cd your-laravel-project
 
 ## 2. Install PHP Dependencies
 Use Composer to install Laravel dependencies.
+```bash
 composer install
+```
 
 ## 3. Install Node Modules
 Install JavaScript dependencies required for front-end build.
+```bash
 npm install
+```
 
 ## 4. Create and Configure .env File
 Copy the example environment file and update settings for your local setup.
 cp .env.example .env
+```bash
 APP_NAME='Laravel App'
 APP_ENV=local
 APP_KEY=
@@ -42,26 +47,34 @@ DB_PORT=3306
 DB_DATABASE=laravel_app
 DB_USERNAME=root
 DB_PASSWORD=
-
+```
 ## 5. Generate Application Key
 Generate a unique encryption key for your application.
+```bash
 php artisan key:generate
+```
 
 ## 6. Set Up Database
 Create a new MySQL database and run migrations to set up tables.
 CREATE DATABASE laravel_app;
+```bash
 php artisan migrate
+```
 
 ## 7. Install Laravel UI Scaffolding
 Add Laravel UI authentication scaffolding if it’s not already included.
+```bash
 composer require laravel/ui
 php artisan ui bootstrap --auth
 npm run dev
+```
 
 ## 8. Run the Development Server
 Start Laravel’s local development server.
+```bash
 php artisan serve
 Visit: http://127.0.0.1:8000
+```
 
 ### Installation
 ```bash
@@ -78,34 +91,11 @@ php artisan migrate
 php artisan db:seed
 
 # Start development server
-composer dev  # Starts server, queue, logs, and Vite
+php artisan serve  # Starts server, queue, logs, and Vite
+or
+npm run dev  # Starts server, queue, logs, and Vite
 ```
 
-## Development Commands
-
-```bash
-# Start all services (server, queue, logs, vite)
-composer dev
-
-# Individual services
-php artisan serve              # Start Laravel dev server (port 8000)
-php artisan queue:work         # Start queue worker
-php artisan log:monitor        # Monitor logs
-npm run dev                    # Start Vite for asset compilation
-
-# Testing
-php artisan test               # Run PHPUnit tests
-composer lint                  # Run Laravel Pint code formatter
-
-# Database
-php artisan migrate            # Run migrations
-php artisan db:seed            # Seed database
-php artisan migrate:fresh --seed  # Fresh migration with seeding
-
-# API Documentation
-php artisan scribe:generate    # Generate API documentation
-php artisan serve --host=0.0.0.0  # Serve docs at /docs
-```
 
 ## Test User Accounts
 
