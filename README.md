@@ -30,6 +30,8 @@ composer install
 Install JavaScript dependencies required for front-end build.
 ```bash
 npm install
+or
+npm install –-force 
 ```
 
 ## 4. Create and Configure .env File
@@ -80,7 +82,7 @@ Visit: http://127.0.0.1:8000
 ```bash
 # Install dependencies
 composer install
-npm install
+npm install or npm install -–force
 
 # Environment setup
 cp .env.example .env
@@ -93,7 +95,7 @@ php artisan db:seed
 # Start development server
 php artisan serve  # Starts server, queue, logs, and Vite
 or
-npm run dev  # Starts server, queue, logs, and Vite
+npm run dev or npm run build   # Starts server, queue, logs, and Vite
 ```
 
 
