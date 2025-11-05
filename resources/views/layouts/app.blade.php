@@ -12,12 +12,20 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        .nav-item .active {
+            color: #ff7b00 !important;
+        }
+    </style>
 </head>
 <body>
-    <div id="app" class="d-flex flex-column min-vh-100">
+    <div id="app" class="container-fluid px-0">
         		<!-- Start Header/Navigation -->
 		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
@@ -34,20 +42,22 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item active">
-							<a class="nav-link" href="{{ route('home') }}">Home</a>
+						<li class="nav-item ">
+							<a class="nav-link @if (request()->routeIs('home')) active @endif" href="{{ route('home') }}">Home</a>
 						</li>
-						<li><a class="nav-link" href="{{ route('about') }}">About us</a></li>
+						<li class="nav-item">
+                            <a class="nav-link @if (request()->routeIs('about')) active @endif" href="{{ route('about') }}">About us</a>
+                        </li>
 						{{-- <li><a class="nav-link" href="{{ route('privacy') }}">Privacy Policy</a></li>
 						<li><a class="nav-link" href="{{ route('terms') }}">Terms & Conditions</a></li> --}}
 					</ul>
 
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-md-5">
 					 <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link @if (request()->routeIs('login')) active @endif" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
@@ -143,7 +153,7 @@
 		<footer class="footer-section mt-auto bg-dark text-white">
 			<div class="container-fluid px-md-5">
 
-				<div class="row g-5 my-2">
+				<div class="row g-5 mt-0 mb-1">
 					<div class="col-lg-3 offset-1">
 						<div class="mb-4 footer-logo-wrap">
                             <a href="#" class="footer-logo">
