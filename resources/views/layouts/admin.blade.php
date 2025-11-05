@@ -47,7 +47,7 @@
             background: linear-gradient(180deg, #ff7a00 0%, #ff9a3d 60%, #ffe3c4 100%);
             box-shadow: 3px 0 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            /* z-index: 1; */
+            z-index: 1;
             padding-top: 1rem;
             overflow-y: auto;
             color: #fff;

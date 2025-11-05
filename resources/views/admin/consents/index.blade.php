@@ -83,7 +83,7 @@
                                         <tr>
                                             <td class="text-center fw-bold">{{ $key + 1 }}</td>
                                             <td>
-                                                <textarea disabled class="form-control" id="" cols="40" rows="4">{{ $consent->consent_text }}</textarea>
+                                                {{ $consent->consent_text }}
                                             </td>
                                             <td class="text-center">
                                                 <span class="badge bg-info py-2">{{ $consent->version }}</span>
