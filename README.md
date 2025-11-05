@@ -40,6 +40,7 @@ cp .env.example .env
 ```bash
 APP_NAME='Laravel App'
 APP_ENV=local
+APP_TIMEZONE="Asia/Kuala_Lumpur"
 APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost
