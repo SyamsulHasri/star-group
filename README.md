@@ -68,7 +68,7 @@ Add Laravel UI authentication scaffolding if it’s not already included.
 ```bash
 composer require laravel/ui
 php artisan ui bootstrap --auth
-npm run dev
+npm run dev or npm run build
 ```
 
 ## 8. Run the Development Server
@@ -91,6 +91,9 @@ php artisan key:generate
 # Database setup
 php artisan migrate
 php artisan db:seed
+
+# For Refresh existing Database with seeding initial data
+php artisan migrate:fresh --seed
 
 # Start development server
 php artisan serve  # Starts server, queue, logs, and Vite
