@@ -30,6 +30,8 @@ composer install
 Install JavaScript dependencies required for front-end build.
 ```bash
 npm install
+or
+npm install –-force 
 ```
 
 ## 4. Create and Configure .env File
@@ -38,6 +40,7 @@ cp .env.example .env
 ```bash
 APP_NAME='Laravel App'
 APP_ENV=local
+APP_TIMEZONE="Asia/Kuala_Lumpur"
 APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost
@@ -66,7 +69,7 @@ Add Laravel UI authentication scaffolding if it’s not already included.
 ```bash
 composer require laravel/ui
 php artisan ui bootstrap --auth
-npm run dev
+npm run dev or npm run build
 ```
 
 ## 8. Run the Development Server
@@ -80,7 +83,7 @@ Visit: http://127.0.0.1:8000
 ```bash
 # Install dependencies
 composer install
-npm install
+npm install or npm install -–force
 
 # Environment setup
 cp .env.example .env
@@ -90,10 +93,13 @@ php artisan key:generate
 php artisan migrate
 php artisan db:seed
 
+# For Refresh existing Database with seeding initial data
+php artisan migrate:fresh --seed
+
 # Start development server
 php artisan serve  # Starts server, queue, logs, and Vite
 or
-npm run dev  # Starts server, queue, logs, and Vite
+npm run dev or npm run build   # Starts server, queue, logs, and Vite
 ```
 
 
