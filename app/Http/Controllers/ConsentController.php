@@ -6,16 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Str;
 use App\Models\UserConsent;
-
+use App\Models\Consent;
 
 class ConsentController extends Controller
 {
-    public function accept(Request $request)
+    public function accept(Request $request, $consent)
     {
+        
         try {
 
+            $consentVersion = Consent::find($consent);
+
             $guid = Str::uuid();
-            $version = 1;
+            $version = $consentVersion->version;
             $timestamp = now();
 
             // Save to DB

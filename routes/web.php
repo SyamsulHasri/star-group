@@ -13,7 +13,7 @@ Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/privacy-policy', [PageController::class, 'privacy'])->name('privacy');
 Route::get('/terms', [PageController::class, 'terms'])->name('terms');
 
-Route::post('/consent/accept', [ConsentController::class, 'accept'])->name('consent.accept');
+Route::post('/consent/accept/{consent}', [ConsentController::class, 'accept'])->name('consent.accept');
 Route::post('/consent/decline', [ConsentController::class, 'decline'])->name('consent.decline');
 
 // Display 404 error page
@@ -32,9 +32,13 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-    
+
     // User Management Routes
     Route::resource('users', App\Http\Controllers\UserManagementController::class);
+
+    Route::resource('consents', App\Http\Controllers\ConsentManagementController::class);
+    // Activate Consent Version
+    Route::put('/activate/{consent}', [App\Http\Controllers\ConsentManagementController::class, 'activate'])->name('activate.consent');
 });
 
 

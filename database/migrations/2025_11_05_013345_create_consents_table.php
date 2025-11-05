@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('consents', function (Blueprint $table) {
             $table->id();
+            $table->longText('consent_text');
+            $table->enum('status', ['active', 'deactive'])->default('deactive');
+            $table->string('version')->unique();
+            $table->string('created_by');
             $table->timestamps();
         });
     }

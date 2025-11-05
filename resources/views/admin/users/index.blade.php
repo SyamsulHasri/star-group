@@ -15,7 +15,7 @@
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="fw-bold text-dark mb-0">
-                    <i class="bi bi-shield-check me-2 text-success"></i>User Management
+                    <i class="bi bi-people me-2 text-success"></i>User Management
                 </h3>
                 <a href="{{ url()->previous() }}" class="btn btn-outline-secondary btn-sm">
                     <i class="bi bi-arrow-left"></i> Back

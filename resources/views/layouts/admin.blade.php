@@ -47,7 +47,7 @@
             background: linear-gradient(180deg, #ff7a00 0%, #ff9a3d 60%, #ffe3c4 100%);
             box-shadow: 3px 0 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            z-index: 1;
+            /* z-index: 1; */
             padding-top: 1rem;
             overflow-y: auto;
             color: #fff;
@@ -107,7 +107,7 @@
             margin-left: 250px;
             background: linear-gradient(90deg, #001b33 0%, #112d4e 100%);
             color: #fff;
-            z-index: 10;
+            /* z-index: 10; */
             position: relative;
             text-align: center;
             padding: 15px 0;
@@ -191,7 +191,7 @@
         <!-- Sidebar -->
         <div id="sidebar" class="sidebar">
             <a href="{{ route('dashboard') }}" class="@if (request()->routeIs('dashboard')) active @endif"><i class="bi bi-house-door"></i> <span>Dashboard</span></a>
-            <a href="#"><i class="bi bi-shield-check"></i> <span>Consents</span></a>
+            <a href="{{ route('consents.index')}}" class="@if (request()->routeIs('consents.index')) active @endif"><i class="bi bi-shield-check"></i> <span>Consents</span></a>
             <a href="{{ route('users.index') }}" class="@if (request()->routeIs('users.index')) active @endif"><i class="bi bi-people"></i> <span>Users</span></a>
             {{-- <a href="#"><i class="bi bi-gear"></i> <span>Settings</span></a> --}}
         </div>
@@ -221,6 +221,10 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    @stack('scripts')
+
     <script>
         const sidebar = document.getElementById('sidebar');
         const sidebarToggle = document.getElementById('sidebarToggle');
@@ -252,6 +256,7 @@
             navbarDropdown1.classList.toggle('show');
         });
     </script>
+
 </body>
 </html>
 
