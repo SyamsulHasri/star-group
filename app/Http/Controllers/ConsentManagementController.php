@@ -14,8 +14,8 @@ class ConsentManagementController extends Controller
     {
         try {
             $content = null;
-            $term = Constants::TERM_CONDITION;
-            $privacy = Constants::PRIVACY_POLICY;
+            $term = Constants::termCondition();
+            $privacy = Constants::privacyPolicy();
             $break = Constants::NEW_LINE;
 
             $activeConsent = Consent::where('status', 'active')->first();

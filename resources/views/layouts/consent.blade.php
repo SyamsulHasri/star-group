@@ -3,8 +3,8 @@
 
     @php
         $content = null;
-        $term = App\Constants::TERM_CONDITION;
-        $privacy = App\Constants::PRIVACY_POLICY;
+        $term = App\Constants::termCondition();
+        $privacy = App\Constants::privacyPolicy();
         $break = App\Constants::NEW_LINE;
 
         $consent = App\Models\Consent::where('status', 'active')->first();
@@ -104,6 +104,6 @@
             }
         });
     </script>
-    
+
     @endif
 @endif
