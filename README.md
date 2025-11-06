@@ -97,9 +97,10 @@ php artisan db:seed
 php artisan migrate:fresh --seed
 
 # Start development server
+npm run build #Initiates a script defined
 php artisan serve  # Starts server, queue, logs, and Vite
 or
-npm run dev or npm run build   # Starts server, queue, logs, and Vite
+npm run dev or npm run prod   # Starts server, queue, logs, and Vite
 ```
 
 
@@ -112,6 +113,7 @@ The system includes predefined test users for each user type. All users have the
 | Email | User Type | Name | Description |
 |-------|-----------|------|-------------|
 | `admin@example.com` | Admin | Admin | System administrator |
+| `admin2@example.com` | Admin 2 | Admin | System administrator |
 
 
 ------------------------------------------------------------------------------------------------
