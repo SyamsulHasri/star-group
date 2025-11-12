@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\ConsentController;
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -28,7 +28,6 @@ Route::fallback(function () {
 
 Auth::routes();
 
-
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
@@ -40,6 +39,3 @@ Route::middleware(['auth'])->group(function () {
     // Activate Consent Version
     Route::put('/activate/{consent}', [App\Http\Controllers\ConsentManagementController::class, 'activate'])->name('activate.consent');
 });
-
-
-

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use DB;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Consent extends Model
@@ -32,6 +31,4 @@ class Consent extends Model
     {
         return $this->belongsTo(User::class, 'created_by', 'id');
     }
-
-    
 }

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consent;
+use App\Models\UserConsent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Str;
-use App\Models\UserConsent;
-use App\Models\Consent;
 
 class ConsentController extends Controller
 {
     public function accept(Request $request, $consent)
     {
-        
+
         try {
 
             $consentVersion = Consent::find($consent);
@@ -37,7 +37,7 @@ class ConsentController extends Controller
                 ]), 60 * 24 * 365);
 
         } catch (\Exception $e) {
-            return "An error occurred: " . $e->getMessage();
+            return 'An error occurred: '.$e->getMessage();
         }
     }
 
@@ -54,7 +54,7 @@ class ConsentController extends Controller
                 ]), 60 * 24);
 
         } catch (\Exception $e) {
-            return "An error occurred: " . $e->getMessage();
+            return 'An error occurred: '.$e->getMessage();
         }
     }
 }
